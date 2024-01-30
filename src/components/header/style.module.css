@@ -1,0 +1,7 @@
+.header {
+  background: url("/background.jpg") no-repeat;
+}
+
+.title {
+  text-shadow: 7px 8px 12px rgba(0, 0, 0, 0.21);
+}
