@@ -7,3 +7,9 @@
   padding: 0 10px;
   margin: 0 auto;
 }
+
+.container_inner {
+  max-width: 1110px;
+  padding: 0 10px;
+  margin: 0 auto;
+}

@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={`${montserrat.className} min-h-full flex flex-col`}>
         <Header />
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
