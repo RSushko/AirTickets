@@ -1,9 +1,8 @@
-import Article from "@/components/cardArticle/CardArticle";
-import Card, { CardInfo } from "@/components/card/Card";
-import Section from "@/components/section/Section";
-import CardArticle, {
-  ArticleProps,
-} from "@/components/cardArticle/CardArticle";
+import Card, { CardInfo } from "@/card/Card";
+import CardArticle, { ArticleProps } from "@/cardArticle/CardArticle";
+import SectionContent from "@/sectionCards/SectionContent";
+import SectionHeader from "@/sectionCards/SectionHeader";
+import Slider from "@/slider/Slider";
 
 const data: Array<CardInfo> = [
   {
@@ -11,7 +10,7 @@ const data: Array<CardInfo> = [
     date: "Apr 5-8",
     transfer: "Direct flight",
     time: "3h 15 min",
-    company: "company_1",
+    company: "Flybe",
     price: 35,
   },
   {
@@ -19,7 +18,7 @@ const data: Array<CardInfo> = [
     date: "Oct 5-8",
     transfer: "Direct flight",
     time: "3h 15 min",
-    company: "company_2",
+    company: "JetBlue",
     price: 45,
   },
   {
@@ -27,7 +26,7 @@ const data: Array<CardInfo> = [
     date: "Apr 5-8",
     transfer: "Direct flight",
     time: "3h 15 min",
-    company: "company_3",
+    company: "Lufthansa",
     price: 25,
   },
   {
@@ -35,7 +34,7 @@ const data: Array<CardInfo> = [
     date: "Oct 5-8",
     transfer: "Direct flight",
     time: "3h 15 min",
-    company: "company_4",
+    company: "AirFrance",
     price: 55,
   },
 ];
@@ -43,48 +42,56 @@ const data: Array<CardInfo> = [
 const preArticle: Array<ArticleProps> = [
   {
     image: "apps",
+    title: "Latest travel restrictions",
+    text: "We provide information on the entry requirements for all countries so you can plan your flight smoothly",
+  },
+  {
+    image: "apps",
     title: "Install our mobile app",
     text: "Our mobile app provides real-time information when you are at the airport",
+  },
+  {
+    image: "apps",
+    title: "The most beautiful destinations",
+    text: "Have you ever considered visiting Easter Island or Alaska? These are the most unique destinations in 2022",
+  },
+  {
+    image: "apps",
+    title: "The most beautiful destinations",
+    text: "Have you ever considered visiting Easter Island or Alaska? These are the most unique destinations in 2022",
+  },
+  {
+    image: "apps",
+    title: "The most beautiful destinations",
+    text: "Have you ever considered visiting Easter Island or Alaska? These are the most unique destinations in 2022",
   },
 ];
 
 export default function Home() {
   return (
-    <>
-      <div className="grow">
-        <div className="container_inner">
-          <Section
-            className={{
-              heading: "text-gray-900 font-medium",
-              subHeading: "text-gray-700 flex justify-between mb-3",
-              content: "grid grid-cols-2 gap-x-3 gap-y-4 mb-11",
-              button: "text-blue-800 text-sm",
-            }}
-            title="Traveling from your location"
-            subtitle="round trip - one passenger"
-            button="Explore more destinations"
-          >
-            {data.map((el, i) => (
-              <Card key={i} data={el} />
-            ))}
-          </Section>
-          <Section
-            className={{
-              heading: "text-gray-900 font-medium",
-              subHeading: "text-gray-700 flex justify-between mb-3",
-              content: "grid grid-cols-2 gap-x-3 gap-y-4 mb-16",
-              button: "text-blue-800 text-sm",
-            }}
-            title="Cheap flights selected for you"
-            subtitle="4 routes in your area"
-          >
-            {data.map((el, i) => (
-              <Card key={i} data={el} />
-            ))}
-          </Section>
-        </div>
-      </div>
-      ;
-    </>
+    <div className="container_inner">
+      <SectionHeader
+        title="Traveling from your location"
+        subtitle="round trip - one passenger"
+      />
+      <SectionContent>
+        {data.map((el, i) => (
+          <Card key={i} data={el} />
+        ))}
+      </SectionContent>
+
+      <SectionHeader title="Discover" />
+      <Slider value={preArticle} />
+
+      <SectionHeader
+        title="Cheap flights selected for you"
+        subtitle="4 routes in your area"
+      />
+      <SectionContent>
+        {data.map((el, i) => (
+          <Card key={i} data={el} />
+        ))}
+      </SectionContent>
+    </div>
   );
 }

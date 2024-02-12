@@ -8,40 +8,41 @@ export type CardInfo = {
   time: string;
   company: string;
   price: number;
-  discount?: boolean;
 };
 
-const Card: React.FC<{ data: CardInfo }> = ({ data }) => {
+type Props = {
+  data: CardInfo;
+  discounted?: boolean;
+};
+
+const Card: React.FC<Props> = ({ data, discounted }) => {
   return (
-    <div className="flex overflow-clip rounded-lg">
-      <div className="relative shrink-0 w-60">
+    <div className="flex overflow-clip rounded-lg w-full">
+      <div className="relative h-auto w-60 max-sm:w-80">
         <Image
-          className="object-fit "
           src={`/${data.name.toLocaleLowerCase()}.jpg`}
           alt={data.name}
           fill
         />
       </div>
-      <div className="bg-orange-100 pt-5 pl-4 pb-4 w-full">
-        <h3 className="text-gray-800 text-lg pb-4">{data.name}</h3>
-        <p className="text-gray-500 text-sm">{data.date}</p>
-        <span className="text-gray-500 text-sm mb-4">
+      <div className="bg-orange-100 pt-5 pl-2 sm:pl-4 pb-4 w-full">
+        <h3 className="text-gray-800 text-xl pb-4">{data.name}</h3>
+        <p className="text-gray-500 text-base">{data.date}</p>
+        <span className="text-gray-500 text-base block mb-2">
           {data.transfer} ∙ {data.time}
         </span>
-        <div className="relative h-8 w-20">
-          <Link href={"#"}>
-            <Image
-              className="object-contain"
-              src={`/${data.company}.png`}
-              alt={data.company}
-              fill
-            />
-          </Link>
+        <div className="relative h-6 w-28">
+          <Image
+            className="object-contain"
+            src={`/${data.company}.svg`}
+            alt={data.company}
+            fill
+          />
         </div>
         <p
-          className={`text-end ${
-            data.discount ? "text-red-700" : "text-gray-800"
-          } mr-4 text-lg`}
+          className={`text-end text-xl mr-4 ${
+            discounted ? "text-red-700" : "text-gray-800"
+          }`}
         >
           € {data.price}
         </p>
