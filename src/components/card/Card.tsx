@@ -17,8 +17,8 @@ type Props = {
 
 const Card: React.FC<Props> = ({ data, discounted }) => {
   return (
-    <div className="flex overflow-clip rounded-lg w-full">
-      <div className="relative h-auto w-60 max-sm:w-80">
+    <div className="md:flex overflow-clip rounded-lg w-full">
+      <div className="relative aspect-video">
         <Image
           src={`/${data.name.toLocaleLowerCase()}.jpg`}
           alt={data.name}
@@ -26,12 +26,12 @@ const Card: React.FC<Props> = ({ data, discounted }) => {
         />
       </div>
       <div className="bg-orange-100 pt-5 pl-2 sm:pl-4 pb-4 w-full">
-        <h3 className="text-gray-800 text-xl pb-4">{data.name}</h3>
+        <h3 className="text-gray-800 text-xl mb-4">{data.name}</h3>
         <p className="text-gray-500 text-base">{data.date}</p>
-        <span className="text-gray-500 text-base block mb-2">
+        <span className="text-gray-500 text-base block mb-4">
           {data.transfer} ∙ {data.time}
         </span>
-        <div className="relative h-6 w-28">
+        <div className="relative h-4 w-16">
           <Image
             className="object-contain"
             src={`/${data.company}.svg`}
