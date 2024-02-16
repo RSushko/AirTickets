@@ -1,5 +1,5 @@
 import Card, { CardInfo } from "@/card/Card";
-import CardArticle, { ArticleProps } from "@/cardArticle/CardArticle";
+import { ArticleProps } from "@/cardArticle/CardArticle";
 import SectionContent from "@/sectionCards/SectionContent";
 import SectionHeader from "@/sectionCards/SectionHeader";
 import Slider from "@/slider/Slider";
@@ -73,6 +73,7 @@ export default function Home() {
       <SectionHeader
         title="Traveling from your location"
         subtitle="round trip - one passenger"
+        link="Explore more destinations"
       />
       <SectionContent>
         {data.map((el, i) => (
@@ -89,7 +90,7 @@ export default function Home() {
       />
       <SectionContent>
         {data.map((el, i) => (
-          <Card key={i} data={el} />
+          <Card key={i} data={el} discounted />
         ))}
       </SectionContent>
     </div>

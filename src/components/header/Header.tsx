@@ -18,7 +18,7 @@ const Header = () => {
           <Link className="max-sm:w-1/4" href="/">
             <Image src={logo} alt="logo" />
           </Link>
-          <nav className="hidden lg:block">
+          <nav className="hidden md:block">
             <ul className="flex gap-14">
               {nav.map((el, i) => {
                 return (
@@ -34,7 +34,7 @@ const Header = () => {
           </nav>
           <button
             onClick={() => setOpen((value) => !value)}
-            className="block lg:hidden"
+            className="block md:hidden"
           >
             <svg fill="none" viewBox="0 0 15 15" height="3em" width="3em">
               <path

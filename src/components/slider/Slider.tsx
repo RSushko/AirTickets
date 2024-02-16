@@ -1,13 +1,12 @@
 "use client";
 
-import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
-import CardArticle from "@/cardArticle/CardArticle";
+import CardArticle, { ArticleProps } from "@/cardArticle/CardArticle";
 
 type Props = {
-  value: [];
+  value: ArticleProps[];
 };
 
 const Slider = ({ value }: Props) => {

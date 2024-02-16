@@ -18,15 +18,15 @@ type Props = {
 const Card: React.FC<Props> = ({ data, discounted }) => {
   return (
     <div className="md:flex overflow-clip rounded-lg w-full">
-      <div className="relative aspect-video">
+      <div className="relative aspect-video w-full">
         <Image
           src={`/${data.name.toLocaleLowerCase()}.jpg`}
           alt={data.name}
           fill
         />
       </div>
-      <div className="bg-orange-100 pt-5 pl-2 sm:pl-4 pb-4 w-full">
-        <h3 className="text-gray-800 text-xl mb-4">{data.name}</h3>
+      <div className="bg-orange-100 pt-2 lg:pt-5 pl-2 sm:pl-4 pb-4 w-full">
+        <h3 className="text-gray-800 text-xl mb-2 lg:mb-4">{data.name}</h3>
         <p className="text-gray-500 text-base">{data.date}</p>
         <span className="text-gray-500 text-base block mb-4">
           {data.transfer} ∙ {data.time}
