@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import { data, icons, apps } from "@/lib/links";
+import { CheckMarkIcon } from "@/lib/svgIcons";
 
 type Props = {
   [key: number]: boolean;
@@ -33,25 +34,13 @@ const FooterSmall = () => {
               className="py-4 flex justify-between w-full"
             >
               <span className="text-gray-800 font-semibold">{el.title}</span>
-              <svg
+              <CheckMarkIcon
                 className={
                   state[i]
                     ? "duration-300 -rotate-90"
                     : "duration-300 rotate-90"
                 }
-                width="8"
-                height="12"
-                viewBox="0 0 8 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M6.57143 6H7M7 6L1 0.5M7 6L1 11.5"
-                  stroke="#111111"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              />
             </button>
             <ul
               className={`border-b-2 overflow-hidden duration-1000 ${

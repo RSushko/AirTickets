@@ -7,6 +7,7 @@ import style from "./style.module.css";
 import logo from "@/public/logo.svg";
 import { nav } from "@/lib/links";
 import MobileNav from "./MobileNav";
+import { BurgerOpenIcon } from "@/lib/svgIcons";
 
 const Header = () => {
   const [open, setOpen] = React.useState(false);
@@ -36,14 +37,7 @@ const Header = () => {
             onClick={() => setOpen((value) => !value)}
             className="block md:hidden"
           >
-            <svg fill="none" viewBox="0 0 15 15" height="3em" width="3em">
-              <path
-                fill="currentColor"
-                fillRule="evenodd"
-                d="M1.5 3a.5.5 0 000 1h12a.5.5 0 000-1h-12zM1 7.5a.5.5 0 01.5-.5h12a.5.5 0 010 1h-12a.5.5 0 01-.5-.5zm0 4a.5.5 0 01.5-.5h12a.5.5 0 010 1h-12a.5.5 0 01-.5-.5z"
-                clipRule="evenodd"
-              />
-            </svg>
+            <BurgerOpenIcon />
           </button>
           {open ? <MobileNav open={open} setOpen={setOpen} /> : ""}
         </div>

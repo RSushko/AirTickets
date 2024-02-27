@@ -61,9 +61,8 @@ const Footer = () => {
             <div className="flex justify-center gap-4">
               {apps.map((el, i) => {
                 return (
-                  <Link href="#">
+                  <Link key={i} href="#">
                     <Image
-                      key={i}
                       src={`/${el}.svg`}
                       alt={el}
                       width={200}

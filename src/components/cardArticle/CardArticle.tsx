@@ -1,3 +1,4 @@
+import { ArrowRightIcon } from "@/lib/svgIcons";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,17 +21,7 @@ const CardArticle: React.FC<{ info: ArticleProps }> = ({ info }) => {
         <p className="text-gray-500">{info.text}</p>
         <div className="absolute flex justify-end right-0 bottom-0">
           <Link href="#">
-            <svg
-              fill="currentColor"
-              viewBox="0 0 16 16"
-              height="3rem"
-              width="3rem"
-            >
-              <path
-                fillRule="evenodd"
-                d="M4 8a.5.5 0 01.5-.5h5.793L8.146 5.354a.5.5 0 11.708-.708l3 3a.5.5 0 010 .708l-3 3a.5.5 0 01-.708-.708L10.293 8.5H4.5A.5.5 0 014 8z"
-              />
-            </svg>
+            <ArrowRightIcon />
           </Link>
         </div>
       </div>
