@@ -4,7 +4,16 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import { data, icons, apps } from "@/lib/links";
-import { CheckMarkIcon } from "@/lib/svgIcons";
+import {
+  AppleStoreIcon,
+  CheckMarkIcon,
+  FacebookIcon,
+  GoogleStoreIcon,
+  InstagramIcon,
+  LinkedinIcon,
+  TwitterIcon,
+  YouTubeIcon,
+} from "@/lib/svgIcons";
 
 type Props = {
   [key: number]: boolean;
@@ -35,11 +44,11 @@ const FooterSmall = () => {
             >
               <span className="text-gray-800 font-semibold">{el.title}</span>
               <CheckMarkIcon
-                className={
+                className={`w-4 h-4 ${
                   state[i]
                     ? "duration-300 -rotate-90"
                     : "duration-300 rotate-90"
-                }
+                }`}
               />
             </button>
             <ul
@@ -61,19 +70,27 @@ const FooterSmall = () => {
           </div>
         );
       })}
-      <div className="align-middle sm:flex sm:justify-around my-8 ">
+      <div className="align-middle md:flex sm:justify-around my-8 ">
         <div>
           <h4 className="text-center mb-2 lg:mb-4 text-gray-800 font-semibold">
             Follow us
           </h4>
           <div className="flex justify-center gap-4">
-            {icons.map((el, i) => {
-              return (
-                <Link key={i} href="#">
-                  <Image src={`/${el}.svg`} alt={el} width={23} height={23} />
-                </Link>
-              );
-            })}
+            <Link href="#" className="w-12 h-12">
+              <FacebookIcon />
+            </Link>
+            <Link href="#">
+              <InstagramIcon className="w-12 h-12" />
+            </Link>
+            <Link href="#">
+              <TwitterIcon className="w-12 h-12" />
+            </Link>
+            <Link href="#">
+              <YouTubeIcon className="w-12 h-12" />
+            </Link>
+            <Link href="#">
+              <LinkedinIcon className="w-12 h-12" />
+            </Link>
           </div>
         </div>
         <div className="pt-4">
@@ -81,17 +98,12 @@ const FooterSmall = () => {
             Download the Utravel app
           </h4>
           <div className="flex justify-center gap-4">
-            {apps.map((el, i) => {
-              return (
-                <Image
-                  key={i}
-                  src={`/${el}.png`}
-                  alt={el}
-                  width={110}
-                  height={30}
-                />
-              );
-            })}
+            <Link href="#" className="w-52 h-12">
+              <AppleStoreIcon />
+            </Link>
+            <Link href="#" className="w-52 h-12">
+              <GoogleStoreIcon />
+            </Link>
           </div>
         </div>
       </div>

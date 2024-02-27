@@ -9,10 +9,12 @@ const ScrollButton = () => {
   return (
     <button
       onClick={scrollUp}
-      className="absolute right-0 bottom-20 z-50 flex gap-2 bg-blue-700 text-white text-lg px-4 py-8 rounded-l-lg"
+      className="absolute right-0 bottom-20 z-50 flex gap-2 bg-blue-700 text-white text-lg px-4 py-8 rounded-l-2xl"
     >
-      <span className="pr-8">Go to top</span>
-      <ArrowTopIcon className="absolute top-9 right-4 " />
+      <span>Go to top</span>
+      <span>
+        <ArrowTopIcon />
+      </span>
     </button>
   );
 };
