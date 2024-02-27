@@ -46,12 +46,3 @@ export const data = [
     ],
   },
 ];
-
-export const icons = [
-  "facebook",
-  "instagram",
-  "twitter",
-  "youTube",
-  "linkedin",
-];
-export const apps = ["appStore", "googlePlay"];

@@ -1,3 +1,4 @@
+import Booking from "@/booking/Booking";
 import Card, { CardInfo } from "@/card/Card";
 import { ArticleProps } from "@/cardArticle/CardArticle";
 import SectionContent from "@/sectionCards/SectionContent";
@@ -70,6 +71,7 @@ const preArticle: Array<ArticleProps> = [
 export default function Home() {
   return (
     <div className="container_inner">
+      <Booking />
       <SectionHeader
         title="Traveling from your location"
         subtitle="round trip - one passenger"

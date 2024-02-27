@@ -2,8 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { data, icons, apps } from "@/lib/links";
+import { data } from "@/lib/links";
 import ScrollButton from "@/scrollButton/ScrollButton";
 import FooterSmall from "./FooterSmall";
 import {
@@ -25,14 +24,16 @@ const Footer = () => {
   ) : (
     <footer className="relative bg-[#C2CFF0] pt-4">
       <div className="container_inner">
-        <div className="grid grid-cols-3 text-center">
+        <div className="grid grid-cols-3">
           {data.map((key, i) => {
             return (
-              <div key={i}>
+              <div
+                key={i}
+                className={i == 1 ? "text-center" : i == 2 ? "text-right" : ""}
+              >
                 <h4 className="text-gray-800 font-semibold mb-2 lg:mb-4">
                   {key.title}
                 </h4>
-
                 <ul>
                   {key.entries.map((el, j) => {
                     return (
