@@ -3,7 +3,9 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
-import CardArticle, { ArticleProps } from "@/cardArticle/CardArticle";
+import CardArticle, {
+  ArticleProps,
+} from "@/components/cardArticle/CardArticle";
 
 type Props = {
   value: ArticleProps[];

@@ -19,10 +19,19 @@
     ],
     "paths": {
       "@/public/*": ["./public/*"],
-      "@/*": ["./src/components/*"],
-      "@/lib/*": ["./src/lib/*"]
+      "@/*": ["./src/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/lib/*": ["./src/lib/*"],
+      "@/shadcn/*": ["./src/shadcn/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/shadcn/Command.tsx",
+    "src/components/auth"
+  ],
   "exclude": ["node_modules"]
 }

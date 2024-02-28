@@ -1,9 +1,9 @@
-import Booking from "@/booking/Booking";
-import Card, { CardInfo } from "@/card/Card";
-import { ArticleProps } from "@/cardArticle/CardArticle";
-import SectionContent from "@/sectionCards/SectionContent";
-import SectionHeader from "@/sectionCards/SectionHeader";
-import Slider from "@/slider/Slider";
+import Booking from "@/components/booking/Booking";
+import Card, { CardInfo } from "@/components/card/Card";
+import { ArticleProps } from "@/components/cardArticle/CardArticle";
+import SectionContent from "@/components/sectionCards/SectionContent";
+import SectionHeader from "@/components/sectionCards/SectionHeader";
+import Slider from "@/components/slider/Slider";
 
 const data: Array<CardInfo> = [
   {

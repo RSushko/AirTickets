@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { data } from "@/lib/links";
-import ScrollButton from "@/scrollButton/ScrollButton";
+import ScrollButton from "@/components/scrollButton/ScrollButton";
 import FooterSmall from "./FooterSmall";
 import {
   AppleStoreIcon,
@@ -14,12 +14,12 @@ import {
   TwitterIcon,
   YouTubeIcon,
 } from "@/lib/svgIcons";
+import useWidth from "@/hooks/useWidth";
 
 const Footer = () => {
-  const [screen, setScreen] = React.useState(false);
-  React.useEffect(() => setScreen(window.innerWidth <= 768), []);
+  const size = useWidth();
 
-  return screen ? (
+  return size <= 768 ? (
     <FooterSmall />
   ) : (
     <footer className="relative bg-[#C2CFF0] pt-4">
@@ -87,7 +87,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      {window.innerWidth > 1400 && <ScrollButton />}
+      {size > 1400 && <ScrollButton />}
     </footer>
   );
 };

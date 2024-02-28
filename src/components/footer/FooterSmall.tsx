@@ -1,9 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import React from "react";
-import { data, icons, apps } from "@/lib/links";
+import { data } from "@/lib/links";
 import {
   AppleStoreIcon,
   CheckMarkIcon,
