@@ -1,3 +1,9 @@
+import Auth from "@/components/auth/Auth";
+
 export default function page() {
-  return <div>page</div>;
+  return (
+    <div className="container_inner">
+      <Auth />
+    </div>
+  );
 }
