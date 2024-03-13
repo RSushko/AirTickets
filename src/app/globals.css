@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+.container {
+  max-width: 1500px;
+  padding: 0 5px;
+  margin: 0 auto;
+}
+
+.container_inner {
+  max-width: 1130px;
+  width: 100%;
+  padding: 0 5px;
+  margin: 0 auto;
+}
